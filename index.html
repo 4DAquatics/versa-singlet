@@ -1,0 +1,89 @@
+﻿<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Versa Singlet Firmware</title>
+<script type="module" src="https://unpkg.com/esp-web-tools@10.0.1/dist/web/install-button.js?module"></script>
+<style>
+  :root { --bg:#f5f5f2; --fg:#1c1c1a; --muted:#5f5f5a; --card:#ffffff; --line:#e3e3dd; --accent:#1f6feb; --accent-fg:#fff; --soft:#eef3fd; }
+  @media (prefers-color-scheme: dark) {
+    :root { --bg:#131313; --fg:#ececea; --muted:#a3a39e; --card:#1e1e1d; --line:#2e2e2c; --accent:#4c8dff; --accent-fg:#fff; --soft:#1c2536; }
+  }
+  * { box-sizing:border-box; }
+  body { margin:0; padding:24px 16px 48px; background:var(--bg); color:var(--fg); font:17px/1.55 system-ui,-apple-system,"Segoe UI",sans-serif; }
+  main { max-width:620px; margin:0 auto; }
+  h1 { font-size:28px; line-height:1.2; margin:0 0 4px; }
+  h2 { font-size:21px; margin:0 0 4px; }
+  .sub { color:var(--muted); margin:0 0 20px; }
+  .card { background:var(--card); border:1px solid var(--line); border-radius:14px; padding:20px; margin:18px 0; }
+  .who { color:var(--muted); font-size:15px; margin:0 0 14px; }
+  ol { padding-left:24px; margin:10px 0; } li { margin:10px 0; }
+  .btn, esp-web-install-button button[slot=activate] { display:inline-block; font:inherit; font-size:18px; font-weight:600; padding:14px 24px;
+    border:0; border-radius:10px; background:var(--accent); color:var(--accent-fg); text-decoration:none; cursor:pointer; }
+  .note { background:var(--soft); border-radius:10px; padding:12px 14px; font-size:15px; margin-top:14px; }
+  table { border-collapse:collapse; width:100%; font-size:15px; margin-top:8px; }
+  td { padding:7px 6px; border-top:1px solid var(--line); vertical-align:top; }
+  .dot { display:inline-block; width:12px; height:12px; border-radius:50%; margin-right:6px; vertical-align:-1px; }
+  details { margin-top:12px; font-size:15px; } summary { cursor:pointer; color:var(--muted); }
+  code { font-size:15px; }
+</style>
+</head>
+<body>
+<main>
+  <h1>Versa Singlet firmware</h1>
+  <p class="sub">Latest version: <b>v3.0</b></p>
+
+  <section class="card">
+    <h2>Update over Wi-Fi</h2>
+    <p class="who">For installed units. You need a phone. Nothing has to be unplugged.</p>
+    <ol>
+      <li><b>First, while your phone still has internet</b>, download the update file:<br><br>
+        <a class="btn" href="Versa_v3.0.bin" download="Versa_v3.0_WiFi_update.bin">Download update file</a></li>
+      <li>At the Singlet, <b>press the button 4 times and keep holding the 4th press</b> for about 5 seconds,
+        until the <b>Versa's lights flash and its pump moves</b>. Then let go. The Singlet's light flashes blue.</li>
+      <li>On your phone, open <b>Wi-Fi settings</b> and join the network <b>Versa-Update-…</b> (no password).
+        If the phone warns there's no internet, choose to stay connected.</li>
+      <li>The update page usually opens by itself. If not, open your web browser and go to <b>192.168.4.1</b></li>
+      <li>Tap <b>Choose file</b>, pick the file you downloaded, then tap <b>Update</b>.
+        Keep the page open until it says <b>Update installed</b> (about a minute).</li>
+      <li>The Singlet restarts by itself. Switch your phone back to your normal Wi-Fi. Done.</li>
+    </ol>
+    <table>
+      <tr><td><span class="dot" style="background:#2f6fe0"></span>Flashing blue</td><td>Wi-Fi is on, waiting for your phone</td></tr>
+      <tr><td><span class="dot" style="background:#18b4c4"></span>Flashing cyan</td><td>The file is arriving: don't switch anything off</td></tr>
+      <tr><td><span class="dot" style="background:#2ea44f"></span>Green</td><td>Update installed, restarting</td></tr>
+      <tr><td><span class="dot" style="background:#d93c3c"></span>Red</td><td>Not updated, nothing was changed. Try again</td></tr>
+    </table>
+    <div class="note">Wi-Fi switches itself off after 5 minutes if nothing is uploaded. One press of the button switches it off straight away.
+      Your dosing schedule is not affected.</div>
+  </section>
+
+  <section class="card">
+    <h2>First install over USB-C</h2>
+    <p class="who">For new units at the workbench, before the Singlet is connected to a Versa. You need a computer with <b>Chrome</b> or <b>Edge</b>.</p>
+    <ol>
+      <li>Plug the Singlet into the computer with a <b>USB-C data cable</b>.</li>
+      <li>Click <b>Install</b> below. A list of ports pops up: pick the one called <b>USB JTAG/serial debug unit</b> and click <b>Connect</b>.</li>
+      <li>Click <b>Install</b> again in the window that opens, and wait for <b>Installation complete</b> (about 30 seconds).</li>
+      <li>Unplug. Done.</li>
+    </ol>
+    <p>
+      <esp-web-install-button manifest="manifest.json">
+        <button slot="activate">Install</button>
+        <span slot="unsupported">This browser can't install firmware. Open this page in <b>Chrome</b> or <b>Edge</b> on a computer.</span>
+        <span slot="not-allowed">This page has to be opened from its https:// address.</span>
+      </esp-web-install-button>
+    </p>
+    <details>
+      <summary>No port in the list, or it didn't finish?</summary>
+      <ul>
+        <li>Try another USB-C cable. Some cables only charge and can't carry data.</li>
+        <li>Close any other program that might be using the port (Arduino IDE, serial monitor), then try again.</li>
+        <li>Unplug the Singlet, plug it back in, and click Install again. Nothing can be damaged by trying again.</li>
+      </ul>
+    </details>
+  </section>
+</main>
+</body>
+</html>
