@@ -32,19 +32,24 @@
 <body>
 <main>
   <h1>Versa Singlet firmware</h1>
-  <p class="sub">Latest version: <b>v3.0</b></p>
+  <p class="sub">Latest version: <b>v3.1</b></p>
 
   <section class="card">
     <h2>Update over Wi-Fi</h2>
     <p class="who">For installed units. You need a phone. Nothing has to be unplugged.</p>
     <ol>
       <li><b>First, while your phone still has internet</b>, download the update file:<br><br>
-        <a class="btn" href="Versa_v3.0.bin" download="Versa_v3.0_WiFi_update.bin">Download update file</a></li>
+        <a class="btn" href="Versa_v3.1.bin" download="Versa_v3.1_WiFi_update.bin">Download update file</a></li>
       <li>At the Singlet, <b>press the button 4 times and keep holding the 4th press</b> for about 5 seconds,
         until the <b>Versa's lights flash and its pump moves</b>. Then let go. The Singlet's light flashes blue.</li>
       <li>On your phone, open <b>Wi-Fi settings</b> and join the network <b>Versa-Update-…</b> (no password).
-        If the phone warns there's no internet, choose to stay connected.</li>
-      <li>The update page usually opens by itself. If not, open your web browser and go to <b>192.168.4.1</b></li>
+        If the phone warns there's no internet, choose to <b>stay connected</b>. The Singlet's light now flashes blue faster.</li>
+      <li>The update page may open by itself. If not, come back to this page and tap:<br><br>
+        <a class="btn" href="http://192.168.4.1/">Open update page</a>
+        <div class="note">Or type the full address into <b>Chrome</b>, including the <b>http://</b> at the start:<br>
+          <b>http://singletupdate</b> &nbsp;or&nbsp; <b>http://192.168.4.1</b><br>
+          Without the http:// some browsers search for it or try a secure address the Singlet doesn't have,
+          and say they <i>can't reach this page</i>.</div></li>
       <li>Tap <b>Choose file</b>, pick the file you downloaded, then tap <b>Update</b>.
         Keep the page open until it says <b>Update installed</b> (about a minute).</li>
       <li>The Singlet restarts by itself. Switch your phone back to your normal Wi-Fi. Done.</li>
@@ -57,6 +62,15 @@
     </table>
     <div class="note">Wi-Fi switches itself off after 5 minutes if nothing is uploaded. One press of the button switches it off straight away.
       Your dosing schedule is not affected.</div>
+    <details>
+      <summary>Joined the Wi-Fi but the update page won't open?</summary>
+      <ul>
+        <li>Use <b>Chrome</b>. Other browsers (Edge, Samsung Internet) may refuse addresses that don't start with https://.</li>
+        <li>Type the address with the <b>http://</b> at the start, exactly as shown above.</li>
+        <li>Turn off <b>mobile data</b> while you update, so the phone doesn't go around the Singlet's Wi-Fi.</li>
+        <li>Check the phone is still joined to <b>Versa-Update-…</b>. Some phones switch back to another Wi-Fi when there's no internet.</li>
+      </ul>
+    </details>
   </section>
 
   <section class="card">
