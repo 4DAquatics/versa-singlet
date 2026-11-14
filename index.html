@@ -32,18 +32,19 @@
 <body>
 <main>
   <h1>Versa Singlet firmware</h1>
-  <p class="sub">Latest version: <b>v3.2</b></p>
+  <p class="sub">Latest version: <b>v3.5</b></p>
 
   <section class="card">
     <h2>Update over Wi-Fi</h2>
     <p class="who">For installed units. You need a phone. Nothing has to be unplugged.</p>
     <ol>
       <li><b>First, while your phone still has internet</b>, download the update file:<br><br>
-        <a class="btn" href="Versa_v3.2.bin" download="Versa_v3.2_WiFi_update.bin">Download update file</a></li>
+        <a class="btn" href="Versa_v3.5.bin" download="Versa_v3.5_WiFi_update.bin">Download update file</a></li>
       <li>At the Singlet, <b>press the button 4 times and keep holding the 4th press</b> for about 5 seconds,
-        until the <b>Versa's lights flash and its pump moves</b>. Then let go. The Singlet's light flashes blue.</li>
+        until the <b>Versa's right light flashes red and white</b>. Then let go: the Versa flashes once and goes back to normal. The Singlet's light flashes blue.
+        <div class="note">Singlets on firmware older than v3.5 show it differently: the Versa's lights flash and its pump moves briefly. Both are normal.</div></li>
       <li>On your phone, open <b>Wi-Fi settings</b> and join the network <b>Versa-Update-…</b> (no password).
-        If the phone warns there's no internet, choose to <b>stay connected</b>. The Singlet's light now flashes blue faster.</li>
+        If the phone warns there's no internet, choose to <b>stay connected</b>. The Singlet's light now alternates <b>blue and green</b>.</li>
       <li>The update page may open by itself. If not, come back to this page and tap:<br><br>
         <a class="btn" href="http://192.168.4.1/">Open update page</a>
         <div class="note">Or type the full address into <b>Chrome</b>, including the <b>http://</b> at the start:<br>
@@ -56,6 +57,7 @@
     </ol>
     <table>
       <tr><td><span class="dot" style="background:#2f6fe0"></span>Flashing blue</td><td>Wi-Fi is on, waiting for your phone</td></tr>
+      <tr><td><span class="dot" style="background:#2f6fe0"></span><span class="dot" style="background:#2ea44f"></span>Blue / green</td><td>Your phone is connected (v3.5 and later)</td></tr>
       <tr><td><span class="dot" style="background:#18b4c4"></span>Flashing cyan</td><td>The file is arriving: don't switch anything off</td></tr>
       <tr><td><span class="dot" style="background:#2ea44f"></span>Green</td><td>Update installed, restarting</td></tr>
       <tr><td><span class="dot" style="background:#d93c3c"></span>Red</td><td>Not updated, nothing was changed. Try again</td></tr>
